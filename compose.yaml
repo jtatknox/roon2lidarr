@@ -1,0 +1,13 @@
+version: "2.0"
+services:
+  roon-app:
+    build: .
+    container_name: roon-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"   # change if your app uses another port
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=production
+      - LIDARR_API_KEY=[your API Key]
